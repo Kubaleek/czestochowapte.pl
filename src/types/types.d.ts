@@ -51,3 +51,14 @@ interface CityTypes {
 type City = {
   [city: string]: CityTypes;
 }
+interface GetContentPagesResponse {
+  pages: {
+    nodes: {
+      id: string;
+      title: string;
+      content: string;
+      slug: string;
+    }[];
+  };
+}
+

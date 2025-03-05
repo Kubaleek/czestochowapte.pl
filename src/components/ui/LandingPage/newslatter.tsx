@@ -1,7 +1,7 @@
 
 export default function Newsletter() {
     return (
-        <div className="border border-[#333]/25 flex flex-col p-4 pb-4 bg-white rounded-md items-center">
+        <div className="flex flex-col p-4 pb-4 bg-white rounded-md items-center">
         <h2 className="text-[24px] font-bold text-[#2d3748] text-center my-1">
           Dołącz do newslettera
         </h2>

@@ -22,7 +22,7 @@ export default function NewsSection() {
         <span className="text-2xl sm:text-[28px] text-black font-bold m-0">Aktualności</span>
       </h2>
       <div className="flex flex-col gap-6">
-        <div className="bg-[#f8f8f8] rounded relative overflow-hidden p-3 bg-opacity-50 border border-[#333]/25">
+        <div className="bg-[#f8f8f8] rounded relative overflow-hidden p-3 bg-opacity-50 ">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 sm:col-span-5 md:col-span-5 lg:col-span-4  items-center justify-center ">
               <Image
@@ -59,7 +59,7 @@ export default function NewsSection() {
             </div>
           </div>
         </div>
-        <div className="bg-[#f8f8f8] rounded relative overflow-hidden p-3 bg-opacity-50 border border-[#333]/25">
+        <div className="bg-[#f8f8f8] rounded relative overflow-hidden p-3 bg-opacity-50 ">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 sm:col-span-5 md:col-span-5 lg:col-span-4  items-center justify-center ">
               <Image
@@ -104,7 +104,7 @@ export default function NewsSection() {
             </div>
           </div>
         </div>
-        <div className="bg-[#f8f8f8] rounded relative overflow-hidden p-3 bg-opacity-50 border border-[#333]/25">
+        <div className="bg-[#f8f8f8] rounded relative overflow-hidden p-3 bg-opacity-50 ">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 sm:col-span-5 md:col-span-5 lg:col-span-4  items-center justify-center ">
               <Image

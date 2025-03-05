@@ -9,7 +9,7 @@ export function ContactInfo({ city }: { city: string }) {
   const contact = cityContacts[city];
 
   return (
-    <div className="col-span-12  md:col-span-6 lg:col-span-4 bg-[#f8f8f8] rounded relative h-fit p-3 border border-[#333]/25">
+    <div className="col-span-12  md:col-span-6 lg:col-span-4 bg-[#f8f8f8] rounded relative h-fit p-3">
       <div className="flex flex-col gap-3">
         <h3 className="text-2xl text-black">{contact.name}</h3>
         <div className="flex flex-col gap-3">

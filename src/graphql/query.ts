@@ -23,3 +23,18 @@ export const GET_ALL_NAVS = gql`
     }
   }
 `;
+
+
+export const GET_ALL_PAGES = gql`
+query GetContentPages{
+  pages(first: 1000) {
+    nodes {
+      id
+      title
+      content
+      slug
+    }
+  }
+}
+
+`

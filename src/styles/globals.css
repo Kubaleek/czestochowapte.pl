@@ -143,3 +143,69 @@
   grid-template-rows: 100px;
   gap: 24px;
 }
+
+div.content p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: justify;
+}
+
+/* div.content h1, h2, h3, h4, h5, h6 {
+
+} */
+
+div.content ul {
+  margin-bottom: 0px;
+}
+
+div.content li {
+  margin: 4px 0px;
+  list-style-type: disc;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+div.content li::marker {
+  content: "▪ ";
+  color: green;
+  font-size: 20px;
+}
+
+.content p a {
+  color: green;
+}
+.content p a:hover {
+  text-decoration: underline;
+}
+
+.content .w1 {
+  padding: 24px;
+}
+
+.content blockquote, .wp-block-quote {
+  padding: 16px;
+  max-width: 100%;
+  margin-top: 34px;
+  width: 100%;
+  margin-bottom: 34px;
+  border-left: 4px solid green;
+  color: #27272A;
+  font-style: italic;
+}
+
+.content table th, table td, .wp-block-table th, .wp-block-table td {
+  text-align: left;
+  border: 1px solid #D4D4D8;
+  padding: 1em;
+}
+.content .spacing-text {
+  margin: 24px 0;
+}
+
+@media (max-width: 768px) {
+  .content blockquote, .wp-block-quote {
+    display: none;
+  }
+}

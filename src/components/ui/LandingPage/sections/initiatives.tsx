@@ -23,7 +23,7 @@ export default function InitiativesSection() {
           </svg>
           <span className="text-2xl sm:text-[28px] text-black font-bold m-0">Inicjatywy</span>
         </h1>
-        <div className="relative bg-white p-[20px] rounded-[10px] border border-[#000]/25">
+        <div className="relative bg-white p-[20px] rounded-[10px]">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 mx-auto gap-6 items-center w-full">
             <a href="https://owe.pte.pl/">
               <Image
