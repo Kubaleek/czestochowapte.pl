@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_NAVS } from "@/graphql/query";
 import { convertToLocalhost } from "@/lib/convertLocal";
+import PTE_LOGO_FOOTER from "./LandingPage/icon/pte-footer";
 
 export default function Footer() {
   const { loading, error, data } = useQuery<MenuQueryResponse>(GET_ALL_NAVS);
@@ -56,6 +57,19 @@ export default function Footer() {
             </Link>
           </p>
         </div>
+      </div>
+      <div className="flex sm:hidden flex flex-col gap-6">
+        <PTE_LOGO_FOOTER />
+        <p className="text-end text-sm">
+            © Polskie Towarzystwo Ekonomiczne - Wszelkie prawa zastrzeżone |{" "}
+            <Link
+              href={"https://pte.pl/aktualnosci/polityka-prywatnosci"}
+              className="text-[#17822e] font-medium"
+              aria-label="politykaPrywatności"
+            >
+              Polityka prywatności
+            </Link>
+          </p>
       </div>
     </footer>
   );
