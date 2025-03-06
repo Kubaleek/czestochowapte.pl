@@ -6,7 +6,6 @@ import { useQuery } from "@apollo/client";
 import { GET_ALL_NAVS } from "@/graphql/query";
 import { convertToLocalhost } from "@/lib/convertLocal";
 import { usePathname } from "next/navigation";
-import { slugify } from "@/lib/slugify";
 
 export default function Navbar() {
   const { loading, error, data } = useQuery<MenuQueryResponse>(GET_ALL_NAVS);
@@ -18,8 +17,8 @@ export default function Navbar() {
   const path = usePathname();
 
   return (
-    <div className="sticky top-0 z-50 ">
-      <nav className="hidden text-[#fafafa] text-base px-6 lg:flex mx-auto bg-[#17822e] backdrop-blur-lg w-full shadow-sm py-3">
+    <nav className="sticky top-0 z-50 ">
+      <div className="hidden text-[#fafafa] text-base px-6 lg:flex mx-auto bg-[#17822e] backdrop-blur-lg w-full shadow-sm py-3">
         <div className="container max-w-[1280px] mx-auto flex justify-between items-center">
           {path != "/" ? (
             <Link href="/" className="flex items-center">
@@ -102,7 +101,7 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }

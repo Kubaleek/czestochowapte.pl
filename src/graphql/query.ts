@@ -32,9 +32,26 @@ query GetContentPages{
       id
       title
       content
+      uri
       slug
+      __typename
     }
   }
 }
 
+`
+
+export const GET_ALL_POSTS = gql`
+query GetContentPosts{
+  posts(first: 1000) {
+    nodes {
+      id
+      title
+      uri
+      content
+      slug
+      __typename
+    }
+  }
+}
 `

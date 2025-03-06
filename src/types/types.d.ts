@@ -57,9 +57,42 @@ interface GetContentPagesResponse {
     nodes: {
       id: string;
       title: string;
+      uri: string;
+      __typename: string
       content: string;
       slug: string;
     }[];
   };
 }
+
+interface GetContentPostsResponse {
+  posts: {
+    nodes: {
+      id: string;
+      title: string;
+      uri: string;
+      __typename: string
+      content: string;
+      slug: string;
+    }[];
+  };
+}
+
+
+
+interface SiteConfig {
+  name: string;
+  description: string;
+  url: string;
+  creator: string;
+  keywords: string[];
+  authors: {
+      name: string;
+      url: string;
+  }[];
+  links?: {
+      github: string | undefined;
+  };
+};
+
 

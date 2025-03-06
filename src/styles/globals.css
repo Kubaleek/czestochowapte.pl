@@ -143,7 +143,6 @@
   grid-template-rows: 100px;
   gap: 24px;
 }
-
 div.content p {
     font-size: 14px;
     line-height: 1.5;
@@ -173,6 +172,12 @@ div.content li::marker {
   font-size: 20px;
 }
 
+div.content li a{
+  color: green;
+}
+div.content li a:hover {
+  text-decoration: underline;
+}
 .content p a {
   color: green;
 }
