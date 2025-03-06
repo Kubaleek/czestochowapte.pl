@@ -1,5 +1,6 @@
 import { Separator } from "@/components/shadcn/separator";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function InitiativesSection() {
   return (
@@ -25,7 +26,7 @@ export default function InitiativesSection() {
         </h1>
         <div className="relative bg-white p-[20px] rounded-[10px]">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 mx-auto gap-6 items-center w-full">
-            <a href="https://owe.pte.pl/">
+            <Link href="https://owe.pte.pl/">
               <Image
                 src={"/olimpiada_wiedzy_ekonomicznej.webp"}
                 className="max-w-full h-auto"
@@ -33,8 +34,8 @@ export default function InitiativesSection() {
                 width={282}
                 height={80}
               />
-            </a>
-            <a href="https://ekonomista.pte.pl/">
+            </Link>
+            <Link href="https://ekonomista.pte.pl/">
               <Image
                 src={"/ekonomista.webp"}
                 alt="ekonomista"
@@ -42,8 +43,8 @@ export default function InitiativesSection() {
                 width={282}
                 height={80}
               />
-            </a>
-            <a href="https://pte.pl/czasopisma/biuletyn">
+            </Link>
+            <Link href="https://pte.pl/czasopisma/biuletyn">
               <Image
                 src={"/biuletyn.webp"}
                 alt="biuletyn"
@@ -51,8 +52,8 @@ export default function InitiativesSection() {
                 width={282}
                 height={80}
               />
-            </a>
-            <a href="/kongres-mlodych-ekonomistow">
+            </Link>
+            <Link href="/kongres-mlodych-ekonomistow">
               <Image
                 src={"/kongres ekonomistów polskich.webp"}
                 alt="kongres ekonomistów polskich"
@@ -60,8 +61,8 @@ export default function InitiativesSection() {
                 width={282}
                 height={80}
               />
-            </a>
-            <a href="https://ksiazkiekonomiczne.pte.pl/">
+            </Link>
+            <Link href="https://ksiazkiekonomiczne.pte.pl/">
               <Image
                 src={"/ksiazki.webp"}
                 alt="ksiazki"
@@ -69,7 +70,7 @@ export default function InitiativesSection() {
                 width={282}
                 height={80}
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
