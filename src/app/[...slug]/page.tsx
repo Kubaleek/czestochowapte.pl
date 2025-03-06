@@ -40,9 +40,6 @@ export default function SlugPage() {
   }
   
 
-
-
-
   const replaceUrls = (content: string) => {
     return content
       .replace(/<img[^>]+src="http:\/\/localhost:3000\/([^"]+)"/g, (_, p1) => `<img src="http://czestochowaptecmspl.local/${p1}"`)
