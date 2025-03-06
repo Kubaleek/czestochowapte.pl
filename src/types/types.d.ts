@@ -4,6 +4,7 @@ type MenuItemNode = {
   parentId: string | null;
   childItems: {
     edges: Array<{
+      label: ReactNode;
       node: {
         label: string;
         url: string;
