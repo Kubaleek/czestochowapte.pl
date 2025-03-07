@@ -174,7 +174,7 @@ export default function Navbar() {
               />
             </Link>
           </div>
-          <button onClick={toggleMenu}>
+          <button aria-label="open" onClick={toggleMenu}>
             <Menu className="text-green-700" />
           </button>
         </div>
@@ -186,7 +186,7 @@ export default function Navbar() {
                 <DrawerDescription aria-description={undefined} />
               </div>
               <DrawerClose asChild className="flex items-end justify-end p-4 py-2">
-                <button className="text-green-700 p-2">
+                <button aria-label="close" className="text-green-700 p-2">
                   <X />
                 </button>
               </DrawerClose>

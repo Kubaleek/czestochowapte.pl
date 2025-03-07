@@ -23,7 +23,7 @@ export default function SocialSection() {
       </h2>
       <div className="flex flex-col gap-6">
         <div className="flex gap-[24px]">
-          <a href="https://x.com/PTE_ZK" className="hover:text-black transition-all w-8 h-8">
+          <a aria-label="twitter" href="https://x.com/PTE_ZK" className="hover:text-black transition-all w-8 h-8">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -40,7 +40,7 @@ export default function SocialSection() {
               ></path>
             </svg>
           </a>
-          <a href="https://www.facebook.com/profile.php?id=100064391691386" className="hover:text-black transition-all w-8 h-8">
+          <a aria-label="facebook" href="https://www.facebook.com/profile.php?id=100064391691386" className="hover:text-black transition-all w-8 h-8">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -57,10 +57,10 @@ export default function SocialSection() {
               ></path>
             </svg>
           </a>
-          <a href="https://www.linkedin.com/company/polskie-towarzystwo-ekonomiczne/?originalSubdomain=pl" className="hover:text-black transition-all w-8 h-8">
+          <a aria-label="linkedin" href="https://www.linkedin.com/company/polskie-towarzystwo-ekonomiczne/?originalSubdomain=pl" className="hover:text-black transition-all w-8 h-8">
           <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" className="svg-inline--fa fa-linkedin w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
           </a>
-          <a href="https://www.youtube.com/channel/UCjypCHgzaMg7V3NWLM5D3Qg" className="hover:text-black transition-all w-8 h-8">
+          <a aria-label="youtube" href="https://www.youtube.com/channel/UCjypCHgzaMg7V3NWLM5D3Qg" className="hover:text-black transition-all w-8 h-8">
           <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" className="svg-inline--fa fa-youtube w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.7 124.1c-6.281-23.65-24.79-42.28-48.28-48.6C458.8 64 288 64 288 64S117.2 64 74.63 75.49c-23.5 6.322-42 24.95-48.28 48.6-11.41 42.87-11.41 132.3-11.41 132.3s0 89.44 11.41 132.3c6.281 23.65 24.79 41.5 48.28 47.82C117.2 448 288 448 288 448s170.8 0 213.4-11.49c23.5-6.321 42-24.17 48.28-47.82 11.41-42.87 11.41-132.3 11.41-132.3s0-89.44-11.41-132.3zm-317.5 213.5V175.2l142.7 81.21-142.7 81.2z"></path></svg>
           </a>
         </div>

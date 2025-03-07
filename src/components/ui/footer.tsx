@@ -32,7 +32,7 @@ export default function Footer() {
           <div className={`grid sm:grid-cols-5 gap-6 lg:grid-cols-5`}>
             {mainMenuItems.map((item) => (
               <div key={item.node.label}>
-                <h3 className="text-xl font-medium mb-2">{item.node.label}</h3>
+                <h2 className="text-xl font-medium mb-2">{item.node.label}</h2>
                 {item.node.childItems.edges.length > 0 ? (
                   <ul>
                     {item.node.childItems.edges.map((subItem) => (

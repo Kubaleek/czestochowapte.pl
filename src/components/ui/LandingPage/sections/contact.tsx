@@ -11,7 +11,7 @@ export function ContactInfo({ city }: { city: string }) {
   return (
     <div className="col-span-12  md:col-span-6 lg:col-span-4 bg-[#f8f8f8] rounded relative h-fit p-3">
       <div className="flex flex-col gap-3">
-        <h3 className="text-2xl text-black">{contact.name}</h3>
+        <h2 className="text-2xl text-black">{contact.name}</h2>
         <div className="flex flex-col gap-3">
           <div className="flex flex-row items-center gap-3">
             <svg
