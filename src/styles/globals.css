@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Arrus&display=swap');
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
@@ -120,7 +121,6 @@
 }
 
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Arrus&display=swap');
   * {
     @apply border-border outline-ring/50;
   }

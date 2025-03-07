@@ -1,20 +1,48 @@
 "use client";
 
-import { Search } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
 import Link from "next/link";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_NAVS } from "@/graphql/query";
+import { useState } from "react";
 import { convertToLocalhost } from "@/lib/convertLocal";
 import { usePathname } from "next/navigation";
-
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/shadcn/drawer";
 export default function Navbar() {
   const { loading, error, data } = useQuery<MenuQueryResponse>(GET_ALL_NAVS);
-
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const handleMouseEnter = (category: string) => setOpenCategory(category);
+  const handleMouseLeave = () => setOpenCategory(null);
+  const [expanded, setExpanded] = useState(false);
   const menuItems = data?.menu?.menuItems?.edges || [];
 
+  const toggleMenu = () => setExpanded((prev) => !prev);
   const mainMenuItems = menuItems.filter((item) => item.node.parentId === null);
 
   const path = usePathname();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setExpanded(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 ">
@@ -66,34 +94,49 @@ export default function Navbar() {
             <ul className="flex gap-[16px]">
               {mainMenuItems.map((item) => (
                 <li
+                  onMouseEnter={() => handleMouseEnter(item.node.label)}
+                  onMouseLeave={handleMouseLeave}
                   key={`${item.node.label}#`}
-                  className="flex items-center relative"
+                  className="relative"
                 >
                   {item.node.childItems.edges.length > 0 ? (
                     <div className="group relative px-[6px]">
-                      <button className="inline-flex items-center group">
+                      <button className="relative items-center group">
                         {item.node.label}
                         <span className="absolute -bottom-2 -left-2 -right-2 h-px origin-left scale-x-0 rounded-full bg-white transition-transform duration-300 ease-out group-hover:scale-x-100" />
                       </button>
-                      <div className="absolute left-0 z-10 hidden w-64 space-y-3 bg-white py-2 shadow-md border group-hover:block shadow-lg rounded-md p-4">
-                        {item.node.childItems.edges.map((subItem) => {
-                          const subItemPath = new URL(convertToLocalhost(subItem.node.url))
-                            .pathname;
-                          const isActive = path === subItemPath;
+                      <AnimatePresence>
+                        {openCategory === item.node.label && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 15 }}
+                            transition={{ duration: 0.2, ease: "linear" }}
+                            onMouseEnter={() => handleMouseEnter(item.node.label)}
+                            onMouseLeave={handleMouseLeave}
+                            className="absolute top-auto -left-3 overflow-hidden z-10 hidden w-64 space-y-3 bg-white py-2 shadow-md border group-hover:block shadow-lg rounded-md p-4"
+                          >
+                            <div className="absolute -top-6 left-0 right-0 h-6 bg-transparent" />
+                            {item.node.childItems.edges.map((subItem) => {
+                              const subItemPath = new URL(convertToLocalhost(subItem.node.url))
+                                .pathname;
+                              const isActive = path === subItemPath;
 
-                          return (
-                            <Link
-                              key={`${subItem.node.label}#`}
-                              href={`${subItemPath}`}
-                              className={`block text-black hover:underline ${
-                                isActive ? "text-green-700" : ""
-                              }`}
-                            >
-                              {subItem.node.label}
-                            </Link>
-                          );
-                        })}
-                      </div>
+                              return (
+                                <Link
+                                  key={`${subItem.node.label}#`}
+                                  href={`${subItemPath}`}
+                                  className={`block text-black hover:underline  ${
+                                    isActive ? "text-green-700" : ""
+                                  }`}
+                                >
+                                  {subItem.node.label}
+                                </Link>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ) : (
                     <Link href={convertToLocalhost(item.node.url)} className="px-[6px] group">
@@ -118,6 +161,58 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
+      </div>
+      <div className="sticky top-0 lg:hidden shadow w-full p-4 bg-[#f9f2eb] border-b-2 border-[#333]/25">
+        <div className="flex flex-row justify-between items-center">
+          <div className="flex items-center">
+            <Link href={"/"} className="flex items-center">
+              <Image
+                src={"/Logo_PTE_pionowe_Czestochowa.png"}
+                alt="PTECzestochowaLogo"
+                width={90}
+                height={90}
+              />
+            </Link>
+          </div>
+          <button onClick={toggleMenu}>
+            <Menu className="text-green-700" />
+          </button>
+        </div>
+        <Drawer open={expanded} onOpenChange={toggleMenu}>
+          <DrawerContent className="flex lg:hidden overflow-hidden  mt-0 !bg-[rgb(249, 242, 235)]">
+            <DrawerHeader className="p-0 mt-0">
+              <div className="flex items-center gap-4">
+                <DrawerTitle className="text-xs invisible hidden text-[#17822e] font-medium text-left"></DrawerTitle>
+                <DrawerDescription aria-description={undefined} />
+              </div>
+              <DrawerClose asChild className="flex items-end justify-end p-4 py-2">
+                <button className="text-green-700 p-2">
+                  <X />
+                </button>
+              </DrawerClose>
+            </DrawerHeader>
+            <div className="space-y-6 py-5 text-center overflow-auto">
+              {mainMenuItems.map((item, i) => (
+                <div key={i} className="flex flex-col gap-3">
+                  <h2 className="text-xl font-bold">{item.node.label}</h2>
+                  {item.node.childItems.edges.length > 0 ? (
+                    <ul className="space-y-3">
+                      {item.node.childItems.edges.map((subItem, i) => (
+                        <li key={i} className="block">
+                          <Link href={convertToLocalhost(subItem.node.url)} className="">
+                            {subItem.node.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <Link href={convertToLocalhost(item.node.url)}>{item.node.label}</Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </DrawerContent>
+        </Drawer>
       </div>
     </nav>
   );

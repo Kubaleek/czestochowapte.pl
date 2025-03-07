@@ -14,8 +14,6 @@ export default function SlugPage() {
 
   
   const slug = params.slug;
- 
-  console.log(slug);
 
   const isCategory = slug && slug.length >= 2 && slug[0] !== slug[1];
   
@@ -101,7 +99,7 @@ export default function SlugPage() {
     <div>
         <div className="grid grid-cols-12 gap-[24px] md:gap-[48px]">
             {isCategory ? (
-              <aside className="col-span-12 md:col-span-4 xl:col-span-3 flex flex-col gap-2 py-[40px] px-[20px]">
+              <aside className="col-span-12 md:col-span-4 xl:col-span-3 flex flex-col gap-2 md:py-[40px] px-[20px] md:px-0">
                 <p>
                     <Link href="/" className="flex flex-row items-center group lg:hover:underline transition-all ease duration-300 !font-light !text-[16px]">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" className="svg-inline--fa fa-arrow-left fa-fw inline-block text-[#2d2f2d] text-[12px] mx-[3px] h-[1.25em] mr-2 transition-transform duration-300 group-hover:translate-x-[-2px] group-hover:text-[#17842f]" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
