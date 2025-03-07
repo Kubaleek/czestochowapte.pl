@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body
         className={`antialiased !bg-[#f8f4f2] !text-[#424242] text-base`}>
           <ApollosProvider>
