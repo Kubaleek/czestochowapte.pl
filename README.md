@@ -20,7 +20,7 @@ czestochowapte.pl to szkolny projekt - aplikacja webowa oparta głównie na wygl
 | --------- | ------------------------------------------------------------------------------------------------------------------- |
 | Frontend  | [TypeScript](https://www.typescriptlang.org/), [Tailwind](https://tailwindcss.com/), [Next.js](https://nextjs.org/), [Shadcn](https://ui.shadcn.com) |
 | Backend   | [WordPress](https://wordpress.org/), [GraphQL](https://graphql.org/)                                                |
-| Inne      | Brak                                                                                                                |
+| Inne      | [Git](https://git-scm.com/book/pl/v2/Pierwsze-kroki-Podstawy-Git)                                                                                                          |
 
 ## 🌐 Autorzy
 
