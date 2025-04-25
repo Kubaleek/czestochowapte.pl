@@ -25,28 +25,28 @@ export const GET_PARTNERS = gql`
 `;
 
 export const GET_PAGES = gql`
-query Pages {
-  pages(pagination: { limit: 1000 }) {
-    title
-    slug
-    content
-    category {
-      name
-    }
-  }
-}
-`
-
-export const GET_POSTS = gql`
-query Articles {
-  articles {
-    title
-    slug
-    content
-    pages {
+  query Pages {
+    pages(pagination: { limit: 1000 }) {
       title
       slug
+      content
+      category {
+        name
+      }
     }
   }
-}
-`
+`;
+
+export const GET_POSTS = gql`
+  query Articles {
+    articles {
+      title
+      slug
+      content
+      pages {
+        title
+        slug
+      }
+    }
+  }
+`;

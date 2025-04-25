@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -7,10 +7,9 @@ import { GET_INITIATIVES } from "@/graphql/query";
 import { InitiativeSectionsResponse } from "@/types/initiative";
 
 export default function Initiatives() {
-
-  const {data} = useQuery<InitiativeSectionsResponse>(GET_INITIATIVES, {
+  const { data } = useQuery<InitiativeSectionsResponse>(GET_INITIATIVES, {
     pollInterval: 5000,
-  })
+  });
 
   const initiative = data?.inicjatywySekcjas || [];
 

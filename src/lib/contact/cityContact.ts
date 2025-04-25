@@ -1,12 +1,11 @@
 import { City, CityTypes } from "@/types/map";
 
-
 // Przygotowujemy tablicę `citiesData`, gdzie każda pozycja to krotka (tuple):
 // - pierwszy element to nazwa miasta (klucz w obiekcie `City`),
 // - drugi element to tablica argumentów dla funkcji `createCityContact`.
 // Dzięki temu możemy wygenerować obiekt automatycznie bez duplikowania kodu.
 
-const citiesData: [keyof City, Parameters<typeof createCityContact>] [] = [
+const citiesData: [keyof City, Parameters<typeof createCityContact>][] = [
   ["Białystok", ["Białystok", "pte@uwb.edu.pl", "+48 85 745 77 34", "ul. Warszawska 63, 15-062 Białystok", "07203000451110000002739550", "5420211640", "0000120932", "050041626", "https://pte.uwb.edu.pl/"]],
   ["Bydgoszcz", ["Bydgoszcz", "biuro@pte.bydgoszcz.pl", "52 322 90 60", "ul. Długa 34, Bydgoszcz 85-034", "67109010720000000101847750", "5540312438", "0000065582", "090563606", "https://pte.bydgoszcz.pl/"]],
   ["Częstochowa", ["Częstochowa", "czestochowa@pte.pl", "+48 509 928 888", "Ul. Pułaskiego 4/6 42-200 Częstochowa", "73102016640000320201661818", "5730108787", "0000096063", "150045354", "https://czestochowapte.pl/"]],
@@ -33,25 +32,15 @@ const citiesData: [keyof City, Parameters<typeof createCityContact>] [] = [
 
 // Funkcja pomocnicza tworząca obiekt typu `CityTypes` na podstawie argumentów.
 // Zwraca ustandaryzowaną strukturę danych kontaktowych dla miasta.
-const createCityContact = (
-  name: string,
-  email: string,
-  tel: string,
-  address: string,
-  numberaccount: string,
-  nip: string,
-  krs: string,
-  regon: string,
-  url: string
-): CityTypes => ({ name, email, tel, address, numberaccount, nip, krs, regon, url });
+const createCityContact = (name: string, email: string, tel: string, address: string, numberaccount: string, nip: string, krs: string, regon: string, url: string): CityTypes => ({ name, email, tel, address, numberaccount, nip, krs, regon, url });
 
 // Główna część: konwertujemy tablicę `citiesData` na obiekt `cityContacts`
 // używając funkcji `reduce`. Dzięki temu każdy wpis w tablicy
 // zostaje przekształcony na właściwość w obiekcie (np. cityContacts["Częstochowa"]).
 const cityContacts: City = citiesData.reduce((acc, [cityName, cityParams]) => {
-// Tworzymy dane kontaktowe przy pomocy `createCityContact(...)`
+  // Tworzymy dane kontaktowe przy pomocy `createCityContact(...)`
   acc[cityName] = createCityContact(...cityParams);
   return acc;
-}, {} as City);  // `as City` upewnia TypeScript, że wynik będzie typu `City`
+}, {} as City); // `as City` upewnia TypeScript, że wynik będzie typu `City`
 
-export default cityContacts; 
+export default cityContacts;

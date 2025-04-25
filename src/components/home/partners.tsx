@@ -14,7 +14,6 @@ export default function Partners() {
 
   const partners = data?.partners || [];
 
-
   return (
     <section className="flex flex-col">
       <div className="flex flex-col gap-3">
@@ -26,13 +25,11 @@ export default function Partners() {
         </h2>
         <div className="relative flex w-full h-full flex-col items-center justify-center overflow-hidden ">
           <Marquee pauseOnHover className="[--duration:50s] flex items-center justify-center ">
-          {partners.map((a, i) => (
-            <a key={i} href={a.url}             className={cn(
-              "relative  w-[138px] h-[98px] my-[15px] flex justify-center items-center mr-12 cursor-pointer overflow-hidden",
-            )}>
-              <Image src={`${process.env.NEXT_PUBLIC_APP_CMS}${a.image.url}`} alt={a.image.name} width={582} height={582}/>
-            </a>
-          ))}
+            {partners.map((a, i) => (
+              <a key={i} href={a.url} className={cn("relative  w-[138px] h-[98px] my-[15px] flex justify-center items-center mr-12 cursor-pointer overflow-hidden")}>
+                <Image src={`${process.env.NEXT_PUBLIC_APP_CMS}${a.image.url}`} alt={a.image.name} width={582} height={582} />
+              </a>
+            ))}
           </Marquee>
           <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
           <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>

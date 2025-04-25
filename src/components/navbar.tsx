@@ -31,8 +31,8 @@ export default function Navbar() {
 
   const path = usePathname();
 
-  if(!data){
-    return <NavbarLoading path={path} />
+  if (!data) {
+    return <NavbarLoading path={path} />;
   }
   // Grupowanie stron po nazwie kategorii
   const groupedByCategory: Record<string, typeof pages> = {};

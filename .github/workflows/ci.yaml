@@ -1,0 +1,51 @@
+# Nazwa workflow
+name: CI
+
+# Kiedy workflow ma się uruchamiać:
+on:
+  push:             # Przy każdym wypchnięciu kodu (push)
+    branches:
+      - main        # ...na gałąź main
+  pull_request:     # I przy każdym pull requeście
+    branches:
+      - main
+
+# Definicja zadań (jobs) w ramach workflow
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Wybór systemu operacyjnego do uruchomienia (Linux: Ubuntu)
+
+    steps:
+      # 1. Pobiera repozytorium z GitHub do środowiska CI
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Ustawia środowisko Node.js (w tym przypadku wersję 18)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # 3. Instalacja zależności z package.json (np. npm install)
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Sprawdzenie stylu i jakości kodu (linting)
+      - name: Lint code
+        run: npm run lint
+
+      # 5. Sprawdzenie typów TypeScript (jeśli używasz TS)
+      - name: Typecheck
+        run: npm run typecheck
+
+      # 6. Uruchomienie testów jednostkowych (np. z użyciem Jest)
+      - name: Run tests
+        run: npm run test
+
+      # 7. Automatyczne formatowanie kodu za pomocą Prettiera
+      - name: Format code
+        run: npm run format
+
+      # 8. Budowanie projektu 
+      - name: Build project
+        run: npm run build

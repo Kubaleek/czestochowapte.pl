@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Polskie Towarzystwo Ekonomiczne",
     url: "http://www.pte.pl",
     siteName: "PTE",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -19,12 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body
-        className={`antialiased !bg-[#f8f4f2] !text-[#424242]  text-base`}
-      >
-        <ApollosProvider>
-          {children}
-        </ApollosProvider>
+      <body className={`antialiased !bg-[#f8f4f2] !text-[#424242]  text-base`}>
+        <ApollosProvider>{children}</ApollosProvider>
         <CookiesAccept />
       </body>
     </html>

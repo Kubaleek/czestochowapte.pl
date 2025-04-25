@@ -13,13 +13,12 @@ export default function Footer() {
     pollInterval: 5000,
   });
 
-
   const pages = data?.pages || [];
 
   const path = usePathname();
-  
-  if(!data){
-    <FooterLoading path={path} />
+
+  if (!data) {
+    <FooterLoading path={path} />;
   }
 
   // Grupowanie stron po nazwie kategorii
@@ -38,7 +37,7 @@ export default function Footer() {
     }
   });
   return (
-    <footer className={` gap-6 justify-center items-center p-6  ${path != '/' ? 'xl:px-12' : 'xl:px-0 container max-w-7xl mx-auto'} pt-0`}>
+    <footer className={` gap-6 justify-center items-center p-6  ${path != "/" ? "xl:px-12" : "xl:px-0 container max-w-7xl mx-auto"} pt-0`}>
       <div className="md:flex hidden flex-col gap-12">
         <div className={`grid md:grid-cols-5 gap-6`}>
           {Object.entries(groupedByCategory).map(([category, pages]) => (
