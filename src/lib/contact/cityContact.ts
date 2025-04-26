@@ -1,10 +1,5 @@
 import { City, CityTypes } from "@/types/map";
 
-// Przygotowujemy tablicę `citiesData`, gdzie każda pozycja to krotka (tuple):
-// - pierwszy element to nazwa miasta (klucz w obiekcie `City`),
-// - drugi element to tablica argumentów dla funkcji `createCityContact`.
-// Dzięki temu możemy wygenerować obiekt automatycznie bez duplikowania kodu.
-
 const citiesData: [keyof City, Parameters<typeof createCityContact>][] = [
   ["Białystok", ["Białystok", "pte@uwb.edu.pl", "+48 85 745 77 34", "ul. Warszawska 63, 15-062 Białystok", "07203000451110000002739550", "5420211640", "0000120932", "050041626", "https://pte.uwb.edu.pl/"]],
   ["Bydgoszcz", ["Bydgoszcz", "biuro@pte.bydgoszcz.pl", "52 322 90 60", "ul. Długa 34, Bydgoszcz 85-034", "67109010720000000101847750", "5540312438", "0000065582", "090563606", "https://pte.bydgoszcz.pl/"]],
@@ -30,17 +25,11 @@ const citiesData: [keyof City, Parameters<typeof createCityContact>][] = [
   ["ZielonaGóra", ["Zielona Góra", "biuro@pte.zgora.pl", "+48 68 324 07 27", "ul. Jedności 58, 65-018 Zielona Góra", "03102016640000320202238019", "9730713772", "0000071173", "080121710", "https://ptezg.pl/"]],
 ];
 
-// Funkcja pomocnicza tworząca obiekt typu `CityTypes` na podstawie argumentów.
-// Zwraca ustandaryzowaną strukturę danych kontaktowych dla miasta.
 const createCityContact = (name: string, email: string, tel: string, address: string, numberaccount: string, nip: string, krs: string, regon: string, url: string): CityTypes => ({ name, email, tel, address, numberaccount, nip, krs, regon, url });
 
-// Główna część: konwertujemy tablicę `citiesData` na obiekt `cityContacts`
-// używając funkcji `reduce`. Dzięki temu każdy wpis w tablicy
-// zostaje przekształcony na właściwość w obiekcie (np. cityContacts["Częstochowa"]).
 const cityContacts: City = citiesData.reduce((acc, [cityName, cityParams]) => {
-  // Tworzymy dane kontaktowe przy pomocy `createCityContact(...)`
   acc[cityName] = createCityContact(...cityParams);
   return acc;
-}, {} as City); // `as City` upewnia TypeScript, że wynik będzie typu `City`
+}, {} as City);
 
 export default cityContacts;
