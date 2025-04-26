@@ -39,7 +39,7 @@
 
 
 <p align="center">
-  To właśnie my — osoby, które przyczyniły się do rozwoju oraz tworzenia tego projektu.<br/>
+  To właśnie my przyczyniliśmy się do rozwoju oraz tworzenia tego projektu.<br/>
   Wsparliśmy go także, zostawiając gwiazdki i dodając motywacji do dalszych działań.
 
 </p>
