@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img width="100" src="./public/pte.svg" alt="Teb Edukacja">
+</p>
+<h1 align="center">Polskie Towarzystwo Ekonomiczne Oddział w Częstochowie</h1>
 
-## Getting Started
+- czestochowapte.pl to szkolny projekt — aplikacja webowa inspirowana oficjalną stroną Zarządu Krajowego Polskiego Towarzystwa Ekonomicznego (pte.pl). Projekt został stworzony z myślą o nowoczesnej prezentacji treści.
+- Aplikacja została zaprojektowana i zbudowana przy użyciu nowoczesnego stosu technologicznego: Next.js, TypeScript oraz Tailwind CSS, co zapewnia szybkie ładowanie stron, wysoką wydajność, pełną responsywność na wszystkich urządzeniach.
+- Kluczowym elementem architektury projektu jest integracja z Headless CMS – Strapi, z którym aplikacja komunikuje się za pomocą GraphQL API. Dzięki temu rozwiązaniu zarządzanie treściami odbywa się dynamicznie, bez konieczności ingerowania w kod źródłowy, umożliwiając łatwą edycję i publikację materiałów w czasie rzeczywistym.
 
-First, run the development server:
+<h2>Stack Technologiczny 🧰</h2>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+| Stack | Opis                                                                                                         |
+| --------- | ------------------------------------------------------------------------------------------------------------------- |    
+| [TypeScript](https://www.typescriptlang.org/) | Język programowania oparty na JavaScript, oferujący statyczną kontrolę typów. 
+| [Next.js](https://nextjs.org/) | Struktura React dla produkcji 
+| [React](https://reactjs.org/) | Biblioteka do tworzenia interfejsów użytkownika 
+| [Tailwind CSS](https://tailwindcss.com/)               | Biblioteka CSS oparta na klasach użytkowych                     
+| [Shadcn](https://ui.shadcn.com/)                  | Dostępne i składane komponenty interfejsu użytkownika bez interfejsu użytkownika 
+| [Github Actions](https://github.com/features/actions)  | Automatyzacje usprawniające procesy pracy                     
+| [ESLint](https://eslint.org/)                          | Lintowanie TypeScriptu                                    
+| [Prettier](https://prettier.io/)                       | Formater kodu
+| [Strapi](https://strapi.io/)                       | Headless CMS do szybkiego tworzenia API
+| [GraphQL](https://graphql.org/learn/)                       | Wydajny język zapytań do API
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
