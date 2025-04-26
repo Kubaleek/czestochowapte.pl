@@ -35,4 +35,38 @@
 
 --- 
 
-<h2>Twórcy 💼</h2>
+<h2 align="center">Twórcy 💼</h2>
+
+
+<p align="center">
+  To właśnie my — osoby, które przyczyniły się do rozwoju oraz tworzenia tego projektu.<br/>
+  Wsparliśmy go także, zostawiając gwiazdki i dodając motywacji do dalszych działań.
+
+</p>
+
+
+<p align="center">
+  <a href="https://github.com/Kubaleek">
+    <img src="https://avatars.githubusercontent.com/u/143101230?v=4" width="64" height="64" style="border-radius:50%;" alt="Kubaleek" />
+  </a>
+  &nbsp;&nbsp;
+
+  <a href="https://github.com/danyPL">
+    <img src="https://avatars.githubusercontent.com/u/112093587?v=4" width="64" height="64" style="border-radius:50%;" alt="danyPL" />
+  </a>
+
+</p>
+
+--- 
+
+<h2>Jak zacząć 🚀</h2>
+
+```bash
+git clone https://github.com/Kubaleek/czestochowapte.pl.git
+npm install
+npm run dev
+
+```
+
+--- 
+
