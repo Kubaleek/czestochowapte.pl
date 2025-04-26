@@ -27,10 +27,10 @@
 --- 
 
 <div align="center">
-<img src="./public/image-1.png" width="500" />
-<img src="./public/image-2.png"  width="500"  />
-<img src="./public/image-3.png"  width="500"  />
-<img src="./public/image-4.png"  width="500"  />
+<img src="./public/image-1.png" width="400" />
+<img src="./public/image-2.png"  width="400"  />
+<img src="./public/image-3.png"  width="400"  />
+<img src="./public/image-4.png"  width="400"  />
 </div>
 
 --- 
