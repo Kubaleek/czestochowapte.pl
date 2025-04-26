@@ -6,6 +6,8 @@
 - czestochowapte.pl to szkolny projekt — aplikacja webowa inspirowana oficjalną stroną Zarządu Krajowego Polskiego Towarzystwa Ekonomicznego (pte.pl). Projekt został stworzony z myślą o nowoczesnej prezentacji treści.
 - Aplikacja została zaprojektowana i zbudowana przy użyciu nowoczesnego stosu technologicznego: Next.js, TypeScript oraz Tailwind CSS, co zapewnia szybkie ładowanie stron, wysoką wydajność, pełną responsywność na wszystkich urządzeniach.
 - Kluczowym elementem architektury projektu jest integracja z Headless CMS – Strapi, z którym aplikacja komunikuje się za pomocą GraphQL API. Dzięki temu rozwiązaniu zarządzanie treściami odbywa się dynamicznie, bez konieczności ingerowania w kod źródłowy, umożliwiając łatwą edycję i publikację materiałów w czasie rzeczywistym.
+  
+--- 
 
 <h2>Stack Technologiczny 🧰</h2>
 
@@ -22,3 +24,15 @@
 | [Strapi](https://strapi.io/)                       | Headless CMS do szybkiego tworzenia API
 | [GraphQL](https://graphql.org/learn/)                       | Wydajny język zapytań do API
 
+--- 
+
+<div align="center">
+<img src="./public/image-1.png" width="500" />
+<img src="./public/image-2.png"  width="500"  />
+<img src="./public/image-3.png"  width="500"  />
+<img src="./public/image-4.png"  width="500"  />
+</div>
+
+--- 
+
+<h2>Twórcy 💼</h2>
