@@ -58,15 +58,3 @@
 </p>
 
 --- 
-
-<h2>Jak zacząć 🚀</h2>
-
-```bash
-git clone https://github.com/Kubaleek/czestochowapte.pl.git
-npm install
-npm run dev
-
-```
-
---- 
-
